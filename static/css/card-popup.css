@@ -1,0 +1,62 @@
+/* Стили для иконки корзины */
+.cart-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+}
+
+.cart-icon img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Стили для корзины */
+.cart-popup {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.cart-popup-content {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+/* Стили товаров в корзине */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #444;
+}
+
+.cart-item span {
+    text-align: left;
+    font-size: 14px;
+}
+
+/* Кнопка удаления в виде иконки */
+.cart-item button {
+    background: none;
+    border: none;
+    color: #ff5a00;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.cart-item button:hover {
+    color: #ff0000;
+}

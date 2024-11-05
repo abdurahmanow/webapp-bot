@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Add-ons</title>
+    <link rel="stylesheet" href="static/css/pop-up.css">
+</head>
+<body>
+    <!-- Pop-up для выбора добавок -->
+    <div id="options-popup" class="popup hidden">
+        <div class="popup-content">
+            <h2>Выберите добавки</h2>
+            <div id="addon-options">
+                <!-- Сюда будут динамически добавляться варианты добавок -->
+            </div>
+            <button id="add-to-cart-btn" onclick="addToCartWithOptions()">Добавить в корзину</button>
+            <button class="close-btn" onclick="toggleOptionsPopup()">Закрыть</button>
+        </div>
+    </div>
+
+    <!-- Подключение основного JavaScript файла -->
+    <script src="static/js/main.js"></script>
+</body>
+</html>

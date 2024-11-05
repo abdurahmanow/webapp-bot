@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Меню</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/card-popup.css">
+    <link rel="stylesheet" href="static/css/pop-up.css">
+</head>
+<body>
+    <header>
+        <h1>Меню</h1>
+        <!-- Динамически заполняемая навигация по категориям -->
+        <nav id="category-nav">
+            <!-- Кнопки категорий будут добавляться с помощью JavaScript -->
+        </nav>
+        <!-- Иконка корзины -->
+        <div class="cart-icon" onclick="toggleCartPopup()">
+            <img src="static/img/shopping-bag.png" alt="Корзина">
+        </div>
+    </header>
+    <main>
+        <section id="menu">
+            <div id="menu-items" class="menu-grid">
+                <!-- Товары будут добавляться здесь с помощью JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Попап для корзины -->
+    <div id="cart-popup" class="cart-popup hidden">
+        <div class="cart-popup-content">
+            <h2>Ваша корзина</h2>
+            <div id="cart-items">
+                <!-- Товары корзины будут отображаться здесь -->
+            </div>
+            <button class="close-btn" onclick="toggleCartPopup()">Закрыть</button>
+        </div>
+    </div>
+
+    <!-- Попап для выбора добавок -->
+    <div id="options-popup" class="popup hidden">
+        <div class="popup-content">
+            <h2>Выберите добавки</h2>
+            <div id="addon-options">
+                <!-- Опции добавок будут добавлены с помощью JavaScript -->
+            </div>
+            <button id="add-to-cart-btn" onclick="addToCartWithOptions()">Добавить в корзину</button>
+            <button class="close-btn" onclick="toggleOptionsPopup()">Закрыть</button>
+        </div>
+    </div>
+
+    <!-- Подключение JavaScript-файлов -->
+    <script src="static/js/main.js"></script>
+    <script src="static/js/cart.js"></script>
+    <script src="static/js/cart-popup.js"></script>
+    <script src="static/js/pop-up.js"></script>
+
+    <!-- Автоматическая загрузка меню и категорий при загрузке страницы -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchCategories(); // Загрузка категорий
+            fetchMenuItems();  // Загрузка меню
+            displayCartItems(); // Отображение товаров в корзине из cookies
+        });
+    </script>
+</body>
+</html>
