@@ -5,7 +5,7 @@ body {
     padding: 0;
     background-color: #1a1a1a;
     color: #fff;
-    overflow-x: hidden; /* Запрет на горизонтальную прокрутку */
+    overflow-x: hidden;
 }
 
 header {
@@ -124,7 +124,7 @@ nav::-webkit-scrollbar {
 .size-options {
     display: flex;
     gap: 5px;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     justify-content: flex-start;
 }
 
@@ -171,10 +171,11 @@ nav::-webkit-scrollbar {
     background-color: #e04a00;
 }
 
-/* Адаптивные стили для экранов до 320px */
-@media (max-width: 320px) {
+/* Адаптивные стили для экранов до 480px (1 колонка) */
+@media (max-width: 480px) {
     .menu-grid {
         grid-template-columns: 1fr;
+        gap: 8px;
     }
 
     .item-card {
@@ -195,10 +196,11 @@ nav::-webkit-scrollbar {
     }
 }
 
-/* Адаптивные стили для экранов до 480px */
-@media (min-width: 321px) and (max-width: 480px) {
+/* Адаптивные стили для экранов от 481px до 600px (2 колонки) */
+@media (min-width: 481px) and (max-width: 600px) {
     .menu-grid {
         grid-template-columns: 1fr 1fr;
+        gap: 10px;
     }
 
     .item-card {
@@ -206,16 +208,14 @@ nav::-webkit-scrollbar {
     }
 }
 
-/* Адаптивные стили для экранов до 600px */
-@media (min-width: 481px) and (max-width: 600px) {
-    .menu-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
 /* Адаптивные стили для горизонтальной ориентации (до 720px) */
 @media (orientation: landscape) and (max-width: 720px) {
     .menu-grid {
         grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .item-card {
+        font-size: 15px;
+        padding: 10px;
     }
 }
