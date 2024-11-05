@@ -213,7 +213,7 @@ nav::-webkit-scrollbar {
 /* Адаптивные стили для экранов от 481px до 600px (2 колонки) */
 @media (min-width: 481px) and (max-width: 600px) {
     .menu-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         gap: 10px;
     }
 
