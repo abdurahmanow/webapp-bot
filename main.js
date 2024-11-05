@@ -7,17 +7,19 @@ let activeCategoryId = null; // Добавляем переменную для �
 // Функция для загрузки меню и категорий
 async function fetchMenuItems() {
     try {
-        const response = await fetch('http://127.0.0.1:5000/api/menu');
-        const categories = await response.json();
-        menuData = categories;
-        displayCategories(categories);
-        activeCategoryId = categories[0].id; // Устанавливаем первую категорию активной по умолчанию
-        displayItems(categories[0].items); // Отображаем товары первой категории по умолчанию
+        // Замените URL на путь к локальному файлу JSON
+        const response = await fetch('test_data.json');
+        const data = await response.json();
+        menuData = data.categories;
+        displayCategories(menuData);
+        activeCategoryId = menuData[0].id; // Устанавливаем первую категорию активной по умолчанию
+        displayItems(menuData[0].items); // Отображаем товары первой категории по умолчанию
         updateActiveCategoryButton(); // Устанавливаем активную категорию по умолчанию
     } catch (error) {
         console.error('Ошибка при загрузке меню:', error);
     }
 }
+
 
 // Функция для отображения категорий с активной категорией
 function displayCategories(categories) {
