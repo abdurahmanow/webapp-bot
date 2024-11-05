@@ -9,7 +9,7 @@ let activeCategoryId = null; // Добавляем переменную для �
 async function fetchMenuItems() {
     try {
         // Замените URL на путь к локальному файлу JSON
-        const response = await fetch('test_data.json');
+        const response = await fetch('static/js/test_data.json');
         const data = await response.json();
         menuData = data.categories;
         displayCategories(menuData);
