@@ -222,10 +222,6 @@ nav::-webkit-scrollbar {
         max-width: 100%;
     }
 
-    .item-card img {
-        max-height: 80px;
-    }
-
     .item-name {
         font-size: 14px;
     }
