@@ -30,6 +30,8 @@ nav {
     max-width: 100%;
     scrollbar-width: thin;
     -ms-overflow-style: none;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 nav::-webkit-scrollbar {
@@ -61,16 +63,19 @@ nav::-webkit-scrollbar {
 .menu-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Две колонки по умолчанию */
-    gap: 8px;
+    gap: 10px;
     padding: 10px;
     box-sizing: border-box;
+    width: 100%; /* Занимает всю ширину экрана */
+    max-width: 600px; /* Ограничение по ширине для крупных экранов */
+    margin: 0 auto; /* Центрирование сетки */
 }
 
 /* Карточка товара */
 .item-card {
     background-color: #2d2d2d;
     border-radius: 10px;
-    padding: 8px;
+    padding: 10px;
     text-align: center;
     color: #fff;
     display: flex;
@@ -79,18 +84,19 @@ nav::-webkit-scrollbar {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s;
     box-sizing: border-box;
-    max-width: 100%; /* Установка ширины карточки в зависимости от контейнера */
-    margin: 0 auto; /* Центрирование карточек */
+    width: 100%; /* Занимает всю ширину контейнера */
+    max-width: 280px; /* Ограничение ширины каждой карточки */
+    margin: 0 auto; /* Центрирование карточек внутри сетки */
 }
 
 /* Настройка изображения товара */
 .item-card img {
-    width: 90%; /* Уменьшение ширины изображения */
+    width: 100%;
     height: auto;
-    max-height: 90px; /* Ограничение по высоте для маленьких экранов */
+    max-height: 100px;
     object-fit: cover;
     border-radius: 8px;
-    margin: 0 auto; /* Центрирование изображения внутри карточки */
+    margin-bottom: 8px;
 }
 
 .item-name {
@@ -132,7 +138,7 @@ nav::-webkit-scrollbar {
 
 /* Основной стиль кнопок выбора размера */
 .size-btn {
-    padding: 4px 8px;
+    padding: 5px 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
     background-color: #f5f5f5;
@@ -181,38 +187,7 @@ nav::-webkit-scrollbar {
     }
 
     .item-card {
-        padding: 6px;
-        max-width: 100%;
-    }
-
-    .item-card img {
-        max-height: 70px;
-    }
-
-    .item-name {
-        font-size: 14px;
-    }
-
-    .size-btn {
-        font-size: 10px;
-        padding: 3px 6px;
-    }
-
-    .cart-btn {
-        font-size: 12px;
-        padding: 6px;
-    }
-}
-
-/* Адаптивные стили для экранов от 481px до 600px (2 колонки) */
-@media (min-width: 481px) and (max-width: 600px) {
-    .menu-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-    }
-
-    .item-card {
-        padding: 6px;
+        padding: 8px;
         max-width: 100%;
     }
 
@@ -232,5 +207,30 @@ nav::-webkit-scrollbar {
     .cart-btn {
         font-size: 12px;
         padding: 6px;
+    }
+}
+
+/* Адаптивные стили для экранов от 481px до 600px (2 колонки) */
+@media (min-width: 481px) and (max-width: 600px) {
+    .menu-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .item-card {
+        padding: 8px;
+        max-width: 100%;
+    }
+}
+
+/* Адаптивные стили для горизонтальной ориентации (до 720px) */
+@media (orientation: landscape) and (max-width: 720px) {
+    .menu-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .item-card {
+        font-size: 15px;
+        padding: 8px;
     }
 }
