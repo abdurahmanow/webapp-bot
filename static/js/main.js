@@ -7,7 +7,7 @@ let activeCategoryId = null; // Добавляем переменную для �
 // Функция для загрузки меню и категорий
 async function fetchMenuItems() {
     try {
-        const response = await fetch('test_data.json');
+        const response = await fetch('static/js/test_data.json');
         const data = await response.json();
         menuData = data.categories;
         displayCategories(menuData);
