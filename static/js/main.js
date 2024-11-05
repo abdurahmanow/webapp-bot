@@ -7,11 +7,13 @@ let activeCategoryId = null; // Добавляем переменную для �
 // Функция для загрузки меню и категорий
 async function fetchMenuItems() {
     try {
-        const response = await fetch('static/js/test_data.json');
-        const data = await response.json();
-        menuData = data.categories;
-        displayCategories(menuData);
-        displayItems(menuData[0].items);
+        const response = await fetch('http://127.0.0.1:5000/api/menu');
+        const categories = await response.json();
+        menuData = categories;
+        displayCategories(categories);
+        activeCategoryId = categories[0].id; // Устанавливаем первую категорию активной по умолчанию
+        displayItems(categories[0].items); // Отображаем товары первой категории по умолчанию
+        updateActiveCategoryButton(); // Устанавливаем активную категорию по умолчанию
     } catch (error) {
         console.error('Ошибка при загрузке меню:', error);
     }
@@ -89,14 +91,16 @@ function displayItems(items) {
         // Карточка товара
         itemCard.innerHTML = `
             <img src="${item.image_url}" alt="${item.name}">
-            <div class="item-name">${item.name}</div>
-            <div class="item-description">${item.description}</div>
             <div class="item-info">
-                <span class="item-price">${item.price} грн</span>
                 <span class="item-weight">${item.weight}</span>
+                <span class="item-price">${item.price} грн</span>
             </div>
-            <div class="size-options">${sizesHTML}</div>
-            <button class="cart-btn" onclick="handleAddToCart(${item.id})">В корзину</button>
+            <h3 class="item-name">${item.name}</h3>
+            <p class="item-description">${item.description}</p>
+            <div class="size-cart-container">
+                <div class="size-options">${sizesHTML}</div>
+                <button class="cart-btn" onclick="handleAddToCart(${item.id})">В КОШИК</button>
+            </div>
         `;
         menuContainer.appendChild(itemCard);
     });
@@ -132,3 +136,23 @@ function addToCart(item) {
 
 // Инициализация загрузки меню
 document.addEventListener('DOMContentLoaded', fetchMenuItems);
+
+// Проверка ориентации и ширины экрана
+function checkScreenOrientation() {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    const orientation = width > height ? 'landscape' : 'portrait';
+
+    if (orientation === 'landscape' && width <= 720) {
+        document.body.classList.add('landscape');
+    } else {
+        document.body.classList.remove('landscape');
+    }
+}
+
+// Обновляем интерфейс при изменении ориентации устройства
+window.addEventListener('resize', checkScreenOrientation);
+window.addEventListener('orientationchange', checkScreenOrientation);
+
+// Инициализация при загрузке страницы
+document.addEventListener('DOMContentLoaded', checkScreenOrientation);
