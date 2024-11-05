@@ -199,7 +199,7 @@ nav::-webkit-scrollbar {
 /* Адаптивные стили для экранов от 481px до 600px (2 колонки) */
 @media (min-width: 481px) and (max-width: 600px) {
     .menu-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         gap: 10px;
     }
 
@@ -211,7 +211,7 @@ nav::-webkit-scrollbar {
 /* Адаптивные стили для горизонтальной ориентации (до 720px) */
 @media (orientation: landscape) and (max-width: 720px) {
     .menu-grid {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 
     .item-card {
