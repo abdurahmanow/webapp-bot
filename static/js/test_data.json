@@ -10,7 +10,7 @@
                     "description": "Булка, говяжья котлета, сыр, соус",
                     "price": 5.5,
                     "weight": "200г",
-                    "image_url": "static/img/burger.jpg",
+                    "image_url": "https://example.com/images/cheeseburger.jpg",
                     "sizes": ["Маленький", "Средний", "Большой"],
                     "addons": ["Сыр", "Бекон", "Лук"]
                 },
@@ -20,7 +20,7 @@
                     "description": "Булка, две котлеты, сыр, лук, соус",
                     "price": 7.0,
                     "weight": "300г",
-                    "image_url": "static/img/burger.jpg",
+                    "image_url": "https://example.com/images/doubleburger.jpg",
                     "sizes": ["Маленький", "Средний", "Большой"],
                     "addons": ["Сыр", "Бекон", "Жареный лук"]
                 },
@@ -30,7 +30,7 @@
                     "description": "Куриная котлета, салат, соус",
                     "price": 6.0,
                     "weight": "250г",
-                    "image_url": "static/img/burger.jpg",
+                    "image_url": "https://example.com/images/chickenburger.jpg",
                     "sizes": ["Маленький", "Средний"],
                     "addons": ["Сыр", "Майонез", "Лук"]
                 }
@@ -46,7 +46,7 @@
                     "description": "Прохладительный напиток",
                     "price": 1.5,
                     "weight": "500мл",
-                    "image_url": "static/img/burger.jpg",
+                    "image_url": "https://example.com/images/cola.jpg",
                     "sizes": ["Маленький", "Средний", "Большой"],
                     "addons": []
                 },
@@ -56,7 +56,7 @@
                     "description": "Свежевыжатый апельсиновый сок",
                     "price": 2.5,
                     "weight": "300мл",
-                    "image_url": "static/img/burger.jpg",
+                    "image_url": "https://example.com/images/orangejuice.jpg",
                     "sizes": ["Маленький", "Средний"],
                     "addons": ["Лед", "Мята"]
                 },
@@ -66,7 +66,7 @@
                     "description": "Сладкий молочный коктейль",
                     "price": 3.0,
                     "weight": "400мл",
-                    "image_url": "static/img/burger.jpg",
+                    "image_url": "https://example.com/images/milkshake.jpg",
                     "sizes": ["Маленький", "Большой"],
                     "addons": ["Шоколад", "Карамель", "Взбитые сливки"]
                 }
@@ -82,7 +82,7 @@
                     "description": "Классическая пицца с томатами и сыром",
                     "price": 8.0,
                     "weight": "500г",
-                    "image_url": "static/img/burger.jpg",
+                    "image_url": "https://example.com/images/margarita.jpg",
                     "sizes": ["Маленькая", "Средняя", "Большая"],
                     "addons": ["Дополнительный сыр", "Томаты", "Базилик"]
                 },
@@ -92,7 +92,7 @@
                     "description": "Пикантная пицца с колбасой пепперони",
                     "price": 9.0,
                     "weight": "550г",
-                    "image_url": "static/img/burger.jpg",
+                    "image_url": "https://example.com/images/pepperoni.jpg",
                     "sizes": ["Маленькая", "Средняя", "Большая"],
                     "addons": ["Дополнительный сыр", "Маслины", "Перец чили"]
                 }
