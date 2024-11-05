@@ -1,0 +1,100 @@
+/* Основные стили для pop-up */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: #2d2d2d;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    color: #fff;
+    text-align: left;
+}
+
+.popup-content h2 {
+    margin: 0 0 15px 0;
+    font-size: 22px;
+}
+
+/* Контейнер для опций добавок */
+#addon-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+/* Стиль опций добавок */
+.addon-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 12px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #3a3a3a;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+/* Выбранная добавка */
+.addon-option.selected {
+    background-color: #ff9900;
+    color: #fff;
+    border-color: #ff9900;
+}
+
+/* Скрытие оригинальных чекбоксов и радиокнопок */
+#addon-options input[type="checkbox"],
+#addon-options input[type="radio"] {
+    display: none;
+}
+
+/* Кнопка "Добавить в корзину" */
+#add-to-cart-btn {
+    background-color: #ff5a00;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#add-to-cart-btn:hover {
+    background-color: #e04a00;
+}
+
+.close-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.close-btn:hover {
+    background-color: #444;
+}
+
+/* Скрыть pop-up по умолчанию */
+.hidden {
+    display: none;
+}
