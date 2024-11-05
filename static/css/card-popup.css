@@ -4,8 +4,8 @@
     top: 15px;
     right: 15px;
     cursor: pointer;
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
 }
 
 .cart-icon img {
@@ -13,7 +13,7 @@
     height: 100%;
 }
 
-/* Стили для корзины */
+/* Основной стиль для pop-up корзины */
 .cart-popup {
     position: fixed;
     top: 0;
@@ -27,36 +27,129 @@
     flex-direction: column;
     padding: 20px;
     z-index: 1000;
+    overflow-y: auto;
 }
 
+/* Стили для содержимого pop-up корзины */
 .cart-popup-content {
     flex-grow: 1;
     overflow-y: auto;
 }
 
-/* Стили товаров в корзине */
+/* Стиль для каждого товара в корзине */
 .cart-item {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    border-bottom: 1px solid #444;
+    font-size: 16px;
+}
+
+/* Заголовок товара в корзине */
+.cart-item-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid #444;
+    width: 100%;
+    gap: 10px;
 }
 
-.cart-item span {
-    text-align: left;
-    font-size: 14px;
+/* Контейнер для названия товара */
+.cart-item-name-container {
+    flex: 1;
+    min-width: 120px;
 }
 
-/* Кнопка удаления в виде иконки */
-.cart-item button {
+/* Название товара */
+.cart-item-name {
+    font-weight: bold;
+    color: #ff9900;
+    font-size: 16px;
+}
+
+/* Контейнер для цены товара */
+.cart-item-price-container {
+    width: 80px;
+    text-align: right;
+}
+
+/* Цена товара */
+.cart-item-price {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Добавки */
+.cart-item-addons {
+    font-size: 13px;
+    color: #bbb;
+    margin-top: 4px;
+}
+
+/* Кнопка удаления */
+.cart-item-remove-btn {
     background: none;
     border: none;
     color: #ff5a00;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 20px;
+    margin-left: 10px;
 }
 
-.cart-item button:hover {
+.cart-item-remove-btn:hover {
     color: #ff0000;
+}
+
+/* Адаптивный стиль для экранов меньше 600px */
+@media (max-width: 600px) {
+    .cart-popup {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    .cart-item {
+        font-size: 14px;
+    }
+
+    .cart-item-name-container {
+        min-width: 100px;
+    }
+
+    .cart-item-price {
+        font-size: 14px;
+    }
+
+    .cart-item-remove-btn img {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* Адаптивный стиль для очень узких экранов */
+@media (max-width: 400px) {
+    .cart-popup {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .cart-item-header {
+        gap: 5px;
+    }
+
+    .cart-item-name {
+        font-size: 14px;
+    }
+
+    .cart-item-price-container {
+        width: 60px;
+    }
+
+    .cart-item-price {
+        font-size: 14px;
+    }
+
+    .cart-item-addons {
+        font-size: 12px;
+    }
 }

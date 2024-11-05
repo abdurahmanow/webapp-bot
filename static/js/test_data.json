@@ -1,0 +1,180 @@
+{
+    "categories": [
+        {
+            "id": 1,
+            "name": "Бургеры",
+            "items": [
+                {
+                    "id": 1,
+                    "name": "Чизбургер",
+                    "description": "Булка, говяжья котлета, сыр, соус",
+                    "price": 5.5,
+                    "weight": "200г",
+                    "image_url": "https://example.com/images/cheeseburger.jpg",
+                    "sizes": ["Маленький", "Средний", "Большой"],
+                    "addons": ["Сыр", "Бекон", "Лук"]
+                },
+                {
+                    "id": 2,
+                    "name": "Двойной Бургер",
+                    "description": "Булка, две котлеты, сыр, лук, соус",
+                    "price": 7.0,
+                    "weight": "300г",
+                    "image_url": "https://example.com/images/doubleburger.jpg",
+                    "sizes": ["Маленький", "Средний", "Большой"],
+                    "addons": ["Сыр", "Бекон", "Жареный лук"]
+                },
+                {
+                    "id": 3,
+                    "name": "Чикен Бургер",
+                    "description": "Куриная котлета, салат, соус",
+                    "price": 6.0,
+                    "weight": "250г",
+                    "image_url": "https://example.com/images/chickenburger.jpg",
+                    "sizes": ["Маленький", "Средний"],
+                    "addons": ["Сыр", "Майонез", "Лук"]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Напитки",
+            "items": [
+                {
+                    "id": 11,
+                    "name": "Кола",
+                    "description": "Прохладительный напиток",
+                    "price": 1.5,
+                    "weight": "500мл",
+                    "image_url": "https://example.com/images/cola.jpg",
+                    "sizes": ["Маленький", "Средний", "Большой"],
+                    "addons": []
+                },
+                {
+                    "id": 12,
+                    "name": "Сок апельсиновый",
+                    "description": "Свежевыжатый апельсиновый сок",
+                    "price": 2.5,
+                    "weight": "300мл",
+                    "image_url": "https://example.com/images/orangejuice.jpg",
+                    "sizes": ["Маленький", "Средний"],
+                    "addons": ["Лед", "Мята"]
+                },
+                {
+                    "id": 13,
+                    "name": "Молочный коктейль",
+                    "description": "Сладкий молочный коктейль",
+                    "price": 3.0,
+                    "weight": "400мл",
+                    "image_url": "https://example.com/images/milkshake.jpg",
+                    "sizes": ["Маленький", "Большой"],
+                    "addons": ["Шоколад", "Карамель", "Взбитые сливки"]
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Пицца",
+            "items": [
+                {
+                    "id": 21,
+                    "name": "Пицца Маргарита",
+                    "description": "Классическая пицца с томатами и сыром",
+                    "price": 8.0,
+                    "weight": "500г",
+                    "image_url": "https://example.com/images/margarita.jpg",
+                    "sizes": ["Маленькая", "Средняя", "Большая"],
+                    "addons": ["Дополнительный сыр", "Томаты", "Базилик"]
+                },
+                {
+                    "id": 22,
+                    "name": "Пицца Пепперони",
+                    "description": "Пикантная пицца с колбасой пепперони",
+                    "price": 9.0,
+                    "weight": "550г",
+                    "image_url": "https://example.com/images/pepperoni.jpg",
+                    "sizes": ["Маленькая", "Средняя", "Большая"],
+                    "addons": ["Дополнительный сыр", "Маслины", "Перец чили"]
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Салаты",
+            "items": [
+                {
+                    "id": 31,
+                    "name": "Цезарь с курицей",
+                    "description": "Салат с курицей, листьями салата и соусом Цезарь",
+                    "price": 6.5,
+                    "weight": "300г",
+                    "image_url": "https://example.com/images/caesar.jpg",
+                    "sizes": ["Маленький", "Средний"],
+                    "addons": ["Сыр пармезан", "Гренки", "Анчоусы"]
+                },
+                {
+                    "id": 32,
+                    "name": "Греческий салат",
+                    "description": "Салат с оливками, сыром фета и овощами",
+                    "price": 5.5,
+                    "weight": "280г",
+                    "image_url": "https://example.com/images/greeksalad.jpg",
+                    "sizes": ["Маленький", "Средний", "Большой"],
+                    "addons": ["Бальзамический соус", "Кедровые орехи"]
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Десерты",
+            "items": [
+                {
+                    "id": 41,
+                    "name": "Тирамису",
+                    "description": "Классический итальянский десерт",
+                    "price": 4.0,
+                    "weight": "150г",
+                    "image_url": "https://example.com/images/tiramisu.jpg",
+                    "sizes": ["Порция"],
+                    "addons": ["Какао", "Взбитые сливки"]
+                },
+                {
+                    "id": 42,
+                    "name": "Чизкейк",
+                    "description": "Нежный чизкейк с ягодным соусом",
+                    "price": 4.5,
+                    "weight": "170г",
+                    "image_url": "https://example.com/images/cheesecake.jpg",
+                    "sizes": ["Порция"],
+                    "addons": ["Ягодный соус", "Шоколадная крошка"]
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "name": "Сэндвичи",
+            "items": [
+                {
+                    "id": 51,
+                    "name": "Клубный сэндвич",
+                    "description": "Сэндвич с курицей, беконом и свежими овощами",
+                    "price": 6.0,
+                    "weight": "250г",
+                    "image_url": "https://example.com/images/clubsandwich.jpg",
+                    "sizes": ["Обычный", "Большой"],
+                    "addons": ["Соус", "Сыр"]
+                },
+                {
+                    "id": 52,
+                    "name": "Сэндвич с ветчиной",
+                    "description": "Сэндвич с ветчиной и сыром",
+                    "price": 5.0,
+                    "weight": "200г",
+                    "image_url": "https://example.com/images/hamsandwich.jpg",
+                    "sizes": ["Обычный", "Большой"],
+                    "addons": ["Сыр", "Огурцы", "Помидоры"]
+                }
+            ]
+        }
+    ]
+}

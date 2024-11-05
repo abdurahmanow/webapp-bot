@@ -1,7 +1,8 @@
 // Переменная для хранения данных меню и выбранного размера товара
 let menuData = [];
-let selectedSize = {}; 
-let selectedItem = {}; 
+let selectedSize = {};
+let selectedItem = {};
+let activeCategoryId = null; // Добавляем переменную для отслеживания активной категории
 
 // Функция для загрузки меню и категорий
 async function fetchMenuItems() {
@@ -10,22 +11,49 @@ async function fetchMenuItems() {
         const categories = await response.json();
         menuData = categories;
         displayCategories(categories);
+        activeCategoryId = categories[0].id; // Устанавливаем первую категорию активной по умолчанию
         displayItems(categories[0].items); // Отображаем товары первой категории по умолчанию
+        updateActiveCategoryButton(); // Устанавливаем активную категорию по умолчанию
     } catch (error) {
         console.error('Ошибка при загрузке меню:', error);
     }
 }
 
-// Функция для отображения категорий
+// Функция для отображения категорий с активной категорией
 function displayCategories(categories) {
     const categoryNav = document.getElementById('category-nav');
     categoryNav.innerHTML = '';
+
     categories.forEach(category => {
         const button = document.createElement('button');
         button.classList.add('category-btn');
         button.textContent = category.name;
-        button.onclick = () => filterItemsByCategory(category.id);
+
+        // Устанавливаем класс "active" для активной категории
+        if (category.id === activeCategoryId) {
+            button.classList.add('active');
+        }
+
+        button.onclick = () => {
+            activeCategoryId = category.id; // Обновляем активную категорию
+            filterItemsByCategory(category.id);
+            updateActiveCategoryButton(); // Обновляем стиль активной категории
+        };
+        
         categoryNav.appendChild(button);
+    });
+}
+
+// Функция для обновления стиля активной категории
+function updateActiveCategoryButton() {
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    categoryButtons.forEach((button, index) => {
+        const categoryId = menuData[index].id;
+        if (categoryId === activeCategoryId) {
+            button.classList.add('active');
+        } else {
+            button.classList.remove('active');
+        }
     });
 }
 
@@ -34,6 +62,8 @@ function filterItemsByCategory(categoryId) {
     const category = menuData.find(cat => cat.id === categoryId);
     if (category) {
         displayItems(category.items);
+        activeCategoryId = categoryId; // Обновляем активную категорию
+        updateActiveCategoryButton(); // Обновляем активную кнопку после отображения товаров
     }
 }
 
