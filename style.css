@@ -60,7 +60,7 @@ nav::-webkit-scrollbar {
 /* Сетка для товаров */
 .menu-grid {
     display: grid;
-    grid-template-columns: repeat(1fr); /* Две колонки по умолчанию */
+    grid-template-columns: repeat(2, 1fr); /* Две колонки по умолчанию */
     gap: 10px;
     padding: 10px;
     box-sizing: border-box;
@@ -70,7 +70,7 @@ nav::-webkit-scrollbar {
 .item-card {
     background-color: #2d2d2d;
     border-radius: 10px;
-    padding: 10px;
+    padding: 8px;
     text-align: center;
     color: #fff;
     display: flex;
@@ -79,16 +79,21 @@ nav::-webkit-scrollbar {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s;
     box-sizing: border-box;
+    max-width: 150px; /* Ограничиваем максимальную ширину карточек */
+    margin: 0 auto; /* Центрируем карточки */
 }
 
 .item-card:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Уменьшенный размер изображения */
 .item-card img {
     width: 100%;
-    height: auto;
-    border-radius: 10px;
+    height: 80px; /* Ограничиваем высоту изображения */
+    max-width: 100%; /* Устанавливаем максимальную ширину, чтобы изображение не выходило за пределы карточки */
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 .item-name {
@@ -130,7 +135,7 @@ nav::-webkit-scrollbar {
 
 /* Основной стиль кнопок выбора размера */
 .size-btn {
-    padding: 5px 8px;
+    padding: 4px 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
     background-color: #f5f5f5;
@@ -179,7 +184,12 @@ nav::-webkit-scrollbar {
     }
 
     .item-card {
-        padding: 8px;
+        padding: 6px;
+        max-width: 100%; /* Карточка занимает всю ширину экрана */
+    }
+
+    .item-card img {
+        height: 70px;
     }
 
     .item-name {
@@ -188,6 +198,7 @@ nav::-webkit-scrollbar {
 
     .size-btn {
         font-size: 10px;
+        padding: 3px 6px;
     }
 
     .cart-btn {
@@ -199,23 +210,50 @@ nav::-webkit-scrollbar {
 /* Адаптивные стили для экранов от 481px до 600px (2 колонки) */
 @media (min-width: 481px) and (max-width: 600px) {
     .menu-grid {
-        grid-template-columns: 1fr;
-        gap: 10px;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
     }
 
     .item-card {
-        padding: 10px;
+        padding: 6px;
+        max-width: 140px; /* Уменьшаем ширину карточки */
+    }
+
+    .item-card img {
+        height: 80px;
+    }
+
+    .item-name {
+        font-size: 14px;
+        margin: 6px 0 3px;
+    }
+
+    .item-description {
+        font-size: 11px;
+    }
+
+    .size-btn {
+        font-size: 10px;
+        padding: 3px 5px;
+    }
+
+    .cart-btn {
+        font-size: 12px;
+        padding: 6px;
     }
 }
 
 /* Адаптивные стили для горизонтальной ориентации (до 720px) */
 @media (orientation: landscape) and (max-width: 720px) {
     .menu-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
     }
 
     .item-card {
-        font-size: 15px;
-        padding: 10px;
+        max-width: 140px; /* Уменьшаем ширину карточки в горизонтальном режиме */
+    }
+
+    .item-card img {
+        height: 80px;
     }
 }
