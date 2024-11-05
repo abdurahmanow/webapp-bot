@@ -5,7 +5,6 @@ let selectedItem = {};
 let activeCategoryId = null; // Добавляем переменную для отслеживания активной категории
 
 // Функция для загрузки меню и категорий
-// Функция для загрузки меню и категорий
 async function fetchMenuItems() {
     try {
         // Замените URL на путь к локальному файлу JSON
@@ -20,6 +19,8 @@ async function fetchMenuItems() {
         console.error('Ошибка при загрузке меню:', error);
     }
 }
+
+
 // Функция для отображения категорий с активной категорией
 function displayCategories(categories) {
     const categoryNav = document.getElementById('category-nav');
@@ -46,15 +47,12 @@ function displayCategories(categories) {
 }
 
 // Функция для обновления стиля активной категории
+// Обновление стиля для активной категории
 function updateActiveCategoryButton() {
     const categoryButtons = document.querySelectorAll('.category-btn');
     categoryButtons.forEach((button, index) => {
         const categoryId = menuData[index].id;
-        if (categoryId === activeCategoryId) {
-            button.classList.add('active');
-        } else {
-            button.classList.remove('active');
-        }
+        button.classList.toggle('active', categoryId === activeCategoryId);
     });
 }
 
